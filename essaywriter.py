@@ -33,11 +33,11 @@ content += introduction + "\n"
 titles = re.findall(r'(((\d+)\.(\d+)\.(\d+))\s+(.*))\n?', response)
 
 for title in titles:
-    msg.append({"role":"user","content":str("请详细展开%s部分" % title[0])})
+    msg.append({"role":"user","content":str("请展开%s部分" % title[0])})
     completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=msg,temperature = 0.3,max_tokens = 2048)
     res = completion.choices[0].message.content
     print(res)    
-    content += response + "\n"
+    content += res + "\n"
     msg = msg[:-1]
 
     
