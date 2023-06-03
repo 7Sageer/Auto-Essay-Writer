@@ -8,7 +8,7 @@ from DocumentTest import *
 
 class EssayWriter:
     topic = ""
-    openai.api_key = "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"
+    openai.api_key = os.environ["OPENAI_API_KEY"]
     def __init__(self, topic):
         self.topic = topic
         self.document = Document()
