@@ -43,8 +43,9 @@ class DocumentTest:
 
 if __name__ == "__main__":
     docPlayer = DocumentTest()
+    path = "document/{}.docx".format("test")
     docPlayer.add_para('\n\n\n后疫情时代网络热词和社会现象', size=16, font="黑体", isBold=True, isCenter=True)
     docPlayer.add_para("\n张三", size=14, isCenter=True)
     docPlayer.add_para("(中南海)", size=12, isCenter=True)
     docPlayer.add_text("本文探讨了网络热词的分类和变迁...", size=10.5, font="仿宋",paragraph=docPlayer.add_para("\t摘要", size=10.5, font="仿宋", isBold=True))
-    docPlayer.save("example.docx")
+    docPlayer.save(path)
